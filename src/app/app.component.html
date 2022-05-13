@@ -1,44 +1,66 @@
-<p>
-  <span [matBadge]="notifications" [matBadgeHidden]="notifications===0" matBadgeOverlap="false">Text with a badge</span>
-</p>
+<!-- never stop spinning -->
+<mat-spinner *ngIf="showSpinner" color="accent"></mat-spinner>
+<button (click)="loadData()">Load Data</button>
+<mat-progress-spinner value="40"></mat-progress-spinner>
+<mat-progress-spinner value="0"></mat-progress-spinner>
+<mat-progress-spinner value="100"></mat-progress-spinner>
 
-<p>
-  <span matBadge="1" matBadgeSize="large">Text with large badge</span>
-</p>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Progress bar configuration</h2>
 
-<p>
-  Button with a badge on the left
-  <button mat-raised-button color="primary" matBadge="8" matBadgePosition="before" matBadgeColor="accent">
-    Action
-  </button>
-</p>
+    <section class="example-section">
+      <label class="example-margin">Color:</label>
+      <mat-radio-group [(ngModel)]="color">
+        <mat-radio-button class="example-margin" value="primary">
+          Primary
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="accent">
+          Accent
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="warn">
+          Warn
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
 
-<!-- <p>
-  Button toggles badge visibility
-  <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
-    Hide
-  </button>
-</p> -->
+    <section class="example-section">
+      <label class="example-margin">Mode:</label>
+      <mat-radio-group [(ngModel)]="mode">
+        <mat-radio-button class="example-margin" value="determinate">
+          Determinate
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="indeterminate">
+          Indeterminate
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="buffer">
+          Buffer
+        </mat-radio-button>
+        <mat-radio-button class="example-margin" value="query">
+          Query
+        </mat-radio-button>
+      </mat-radio-group>
+    </section>
 
-<p>
-  Icon with a badge
-  <mat-icon matBadge="15" matBadgeColor="warn">home</mat-icon>
-  <!-- Include text description of the icon's meaning for screen-readers -->
-  <span class="cdk-visually-hidden">
-    Example with a home icon with overlaid badge showing the number 15
-  </span>
-</p>
+    <section class="example-section" *ngIf="mode === 'determinate' || mode === 'buffer'">
+      <label class="example-margin">Progress:</label>
+      <mat-slider class="example-margin" [(ngModel)]="value"></mat-slider>
+    </section>
+    <section class="example-section" *ngIf="mode === 'buffer'">
+      <label class="example-margin">Buffer:</label>
+      <mat-slider class="example-margin" [(ngModel)]="bufferValue"></mat-slider>
+    </section>
+  </mat-card-content>
+</mat-card>
 
-<div>
-  <span matBadge="7" matBadgeColor="primary" matBadgeSize="small">Notification</span>
-</div>
-<div>
-  <span matBadge="8" matBadgeColor="accent" matBadgeSize="medium" matBadgePosition="below before">Notification</span>
-</div>
-<div>
-  <span matBadge="9" matBadgeOverlap="false" matBadgeColor="warn" matBadgeSize="large"
-    matBadgePosition="below after">Notification</span>
-</div>
-<div>
-  <span matBadge="10" matBadgeOverlap="false" matBadgePosition="above before">Notification</span>
-</div>
+<mat-card>
+  <mat-card-content>
+    <h2 class="example-h2">Result</h2>
+
+    <section class="example-section">
+      <mat-progress-bar class="example-margin" [color]="color" [mode]="mode" [value]="value"
+        [bufferValue]="bufferValue">
+      </mat-progress-bar>
+    </section>
+  </mat-card-content>
+</mat-card>
