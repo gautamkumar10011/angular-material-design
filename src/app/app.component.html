@@ -1,31 +1,4 @@
 <div>
-  <mat-button-toggle disableRipple disabled>Toggle</mat-button-toggle>
+  <h1>https://jossef.github.io/material-design-icons-iconfont/</h1>
+  <mat-icon color="primary">air</mat-icon>
 </div>
-
-<div>
-  <mat-button-toggle #toggleRefVariable>Toggle</mat-button-toggle>
-  {{ toggleRefVariable.checked}}
-</div>
-
-
-<mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-  <mat-button-toggle value="angular">Angular</mat-button-toggle>
-  <mat-button-toggle value="react">React</mat-button-toggle>
-  <mat-button-toggle value="vue">Vue</mat-button-toggle>
-</mat-button-toggle-group>
-
-<h3>Single selection</h3>
-<mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color" #refToggleGroup="matButtonToggleGroup">
-  <mat-button-toggle value="java">Java</mat-button-toggle>
-  <mat-button-toggle value="python">Python</mat-button-toggle>
-  <mat-button-toggle value="java script">Java Script</mat-button-toggle>
-  {{refToggleGroup.value}}
-</mat-button-toggle-group>
-
-<h3>Multiple selection</h3>
-<mat-button-toggle-group name="ingredients" aria-label="Ingredients" multiple #refToggleMultiple="matButtonToggleGroup">
-  <mat-button-toggle value="maths">Maths</mat-button-toggle>
-  <mat-button-toggle value="science">Science</mat-button-toggle>
-  <mat-button-toggle value="english">English</mat-button-toggle>
-  {{refToggleMultiple.value}}
-</mat-button-toggle-group>
