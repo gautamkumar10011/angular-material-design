@@ -9,11 +9,15 @@ export class AppComponent {
   title = 'mat-practice';
   notifications = 0;
   showSpinner = false;
-
+  opened = false;
+  showFiller = true;
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {
-      this.showSpinner = false ;
+      this.showSpinner = false;
     }, 5000);
+  }
+  log(state: any) {
+    console.log(state);
   }
 }
