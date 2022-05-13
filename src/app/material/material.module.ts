@@ -9,6 +9,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatCardModule } from '@angular/material/card';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 const MaterialComponents = [
   MatButtonModule,
   MatButtonToggleModule,
@@ -19,7 +21,8 @@ const MaterialComponents = [
   MatProgressSpinnerModule,
   MatProgressBarModule,
   MatCardModule,
-  MatRadioModule
+  MatRadioModule,
+  MatToolbarModule
 ]
 
 @NgModule({
